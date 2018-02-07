@@ -8,7 +8,6 @@ import numpy
 import sys
 import tf
 
-
 class TestLoop:
     curr_pose = PoseStamped()
     waypointIndex = 0

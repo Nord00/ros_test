@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>hej_test</name>
+  <name>ROS_test</name>
   <version>0.0.0</version>
-  <description>The hej_test package</description>
+  <description>The ROS_test package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
