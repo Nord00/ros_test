@@ -23,16 +23,16 @@ rospy.init_node('multi', anonymous=True)
 mode_proxy = rospy.ServiceProxy('mavros/set_mode', SetMode)
 arm_proxy = rospy.ServiceProxy('mavros/cmd/arming', CommandBool)
 
-print 'communication initialization complete'
+print ("communication initialization complete")
 try:
 	data = rospy.wait_for_message('mavros/global_position/rel_alt', Float64, timeout=5)
 except:
 	pass
 
 
-print "wait for service"
+print ("wait for service")
 rospy.wait_for_service('mavros/set_mode')
-print "got service"
+print ("got service")
 
 rate = rospy.Rate(10)
 
@@ -40,12 +40,12 @@ while not rospy.is_shutdown():
 	success = None
 	try:
 		success = mode_proxy(1,'OFFBOARD')
-	except rospy.ServiceException, e:
+	except rospy.ServiceException as e:
 		print ("mavros/set_mode service call failed: %s"%e)
 
 	success = None
 	rospy.wait_for_service('mavros/cmd/arming')
 	try:
 		success = arm_proxy(True)
-	except rospy.ServiceException, e:
+	except rospy.ServiceException as e:
 		print ("mavros1/set_mode service call failed: %s"%e)
