@@ -15,6 +15,7 @@ class TestLoop:
     sim_ctr = 1
     des_pose = PoseStamped()
     isReadyToFly = False
+    #vmepmeroperpomereopvermeopmerpvoerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrv
     
     def __init__(self, H, V, yaw):
         print (yaw)
